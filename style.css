@@ -201,7 +201,7 @@ span {
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
     transition: 0.3 ease;
-    color: white;
+    color: white(209, 2, 2);
 }
 
 .social-icons a:hover {
@@ -376,19 +376,25 @@ span {
 }
 
 .portfolio ul {
-    list-style: none; /* Remove default list styling */
+    display: flex; /* Use Flexbox */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Space items evenly */
+    padding: 0; /* Reset padding */
 }
 
 .portfolio ul li {
-    margin: 20px 0; /* Spacing between projects */
+    flex: 0 1 calc(45% - 10px); /* Two columns with space between */
+    margin: 10px; /* Spacing between items */
+    list-style: none; /* Remove default list styling */
 }
 
 .portfolio ul li a {
     display: flex;
-    align-items: center; /* Align image and text */
+    flex-direction: column; /* Stack image and text */
+    align-items: center; /* Center items */
     text-decoration: none; /* Remove underline from links */
     color: white; /* Link text color */
-    transition: transform 0.3s; /* Add transition for hover effect */
+    transition: transform 0.3s;  
 }
 
 .portfolio ul li a:hover {
@@ -396,8 +402,38 @@ span {
 }
 
 .portfolio ul li img {
-    width: 100px; /* Set a fixed width for images */
+    width: 100%; /* Make the image responsive */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Spacing between image and text */
     border-radius: 8px; /* Optional: rounded corners */
 }
+
+.image-container {
+    position: relative;
+    display: inline-block; /* Allows for inline-block behavior */
+}
+
+.image-container img {
+    display: block; /* Remove bottom space */
+    width: 100%; /* Make the image responsive */
+    height: 50px; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+.image-text {
+    position: absolute;
+    top: 0; /* Center vertically */
+    left: 0; /* Center horizontally */
+    color: black; /* Text color */
+    font-size: 2.0rem; /* Adjust as needed */
+    text-align: center; 
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color:rgba(249, 225, 208, 0.7);
+    width: 100%;
+    height: 50px;
+    padding: 0.5rem; /* Optional: padding */
+    border-radius: 4px; /* Optional: rounded corners for text background */
+    
+}
+
