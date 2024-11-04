@@ -188,27 +188,26 @@ span {
     font-weight: 500;
 }
 
-.social-icons a {
+.social-icons a{
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 4rem;
     height: 4rem;
     background-color: transparent;
-    border: 0.2 solid #b74b4b;
+    border: 0.2rem solid #b74b4b;
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
-    transition: 0.3 ease;
-    color: white(209, 2, 2);
+    color: white;
 }
 
 .social-icons a:hover {
     color: black;
     transform: scale(1.3) translateY(-5px);
     background-color: #b74b4b;
-    box-shadow: 0 0 25px;
+    box-shadow: 0 0 25px #b74b4b;
 }
 
 .btn {
@@ -382,6 +381,18 @@ span {
     padding: 0; /* Reset padding */
 }
 
+.portfolio h2 {
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; /* Optional: loops the animation */
+}
+
+@keyframes example {
+    50%   { background-color: white; }
+    100%  { background-color: #b74b4b; }
+}
+
 .portfolio ul li {
     flex: 0 1 calc(45% - 10px); /* Two columns with space between */
     margin: 10px; /* Spacing between items */
@@ -395,6 +406,7 @@ span {
     text-decoration: none; /* Remove underline from links */
     color: white; /* Link text color */
     transition: transform 0.3s;  
+    font-size: larger;
 }
 
 .portfolio ul li a:hover {
@@ -409,7 +421,7 @@ span {
 
 .image-container {
     position: relative;
-    display: inline-block; /* Allows for inline-block behavior */
+    display: inline-block;  
 }
 
 .image-container img {
@@ -436,4 +448,34 @@ span {
     border-radius: 4px; /* Optional: rounded corners for text background */
     
 }
+* {
+    box-sizing: border-box; /* Apply border-box to all elements */
+}
 
+.image-container {
+    position: relative; /* Position relative for overlay */
+    width: 100%;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: white;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
