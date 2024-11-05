@@ -64,13 +64,13 @@ header {
 
 .logo::before {
     left: 2px;
-    text-shadow: -2px 0 red;
+    text-shadow: -2px 0 rgb(0, 0, 0);
     animation-duration: 1s;
 }
 
 .logo::after {
     left: -2px;
-    text-shadow: -2px 0 blue;
+    text-shadow: -2px 0 rgb(0, 0, 0);
     animation-duration: 1.2s;
 }
 
@@ -373,6 +373,9 @@ span {
         text-align: center; /* Center text */
     }
 }
+.portfolio{
+    padding: 90px;
+}
 
 .portfolio ul {
     display: flex; /* Use Flexbox */
@@ -478,4 +481,16 @@ span {
 
 .container:hover .overlay {
     opacity: 1; /* Show overlay on hover */
+}
+.about{
+    padding: 90px;
+    font-size: medium;
+    background-color: #160909;
+}
+.contact{
+    padding: 100px;
+}
+.lineB{
+    color: white;
+    background-color: white;
 }
