@@ -93,14 +93,28 @@
 <div class="lineB">
   <hr>
 </div>
-  <section class="contact" id="contact">
-    <h2>Contact Me</h2>
+  <footer class="contact" id="contact">
+    <svg width="100%vw" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="curvy-svg">
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="5%" stop-color="#3f3f3f"></stop>
+          <stop offset="95%" stop-color="#3f3f3f"></stop>
+        </linearGradient>
+      </defs>
+      <!-- First Wave Path -->
+      <path d="M 0,400 L 0,100 C 112.21428571428572,86.21428571428572 224.42857142857144,72.42857142857143 359,86 C 493.57142857142856,99.57142857142857 650.5000000000001,140.5 758,142 C 865.4999999999999,143.5 923.5714285714287,105.57142857142857 1029,92 C 1134.4285714285713,78.42857142857143 1287.2142857142858,89.21428571428572 1440,100 L 1440,400 L 0,400 Z" 
+        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="path-0"></path>
+      <!-- Second Wave Path -->
+      <path d="M 0,400 L 0,233 C 154.64285714285717,202.35714285714286 309.28571428571433,171.71428571428572 411,192 C 512.7142857142857,212.28571428571428 561.5,283.5 662,283 C 762.5,282.5 914.7142857142858,210.28571428571428 1053,190 C 1191.2857142857142,169.71428571428572 1315.642857142857,201.35714285714286 1440,233 L 1440,400 L 0,400 Z" 
+        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="path-1"></path>
+    </svg>           
+    <h2>Contact</h2>
+      <i class="fa-regular fa-envelope"></i></a>
       <label for="email">Email: joseph.arcilla@goldenlink.ph</label>
-      <input type="email" id="email" name="email" required>
-      <label for="number">#+6392-9160-5516</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Send</button>
-  </section>
+      <div></div>
+      <i class="fa-solid fa-phone"></i></a>
+      <label for="number">  (+63)92-9160-5516</label>
+  </footer>
 
   <script>
     document.getElementById('burger').addEventListener('click', function () {
@@ -130,6 +144,29 @@
             }
         });
     });
+
+    // Get the logo and header
+const logo = document.querySelector('.logo');
+let lastScrollTop = 0;  // To keep track of scroll direction
+
+// Listen for the scroll event
+window.addEventListener('scroll', function() {
+  // Get the current scroll position
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Check if the user is scrolling down (current scroll position is greater than previous)
+  if (currentScroll > lastScrollTop && currentScroll > 100) {
+    // Scrolling down - hide the logo
+    logo.style.opacity = '0';
+  } else {
+    // Scrolling up - show the logo
+    logo.style.opacity = '1';
+  }
+
+  // Update last scroll position
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
+});
+
   </script>
 </body>
 </html>

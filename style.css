@@ -40,12 +40,12 @@ header {
 }
 
 .logo {
-    position: relative;
+    position: sticky;
     overflow: hidden;
     font-size: 4rem;
     font-weight: 800;
     color: #b74b4b;
-    animation: glitch 1s infinite;
+    
 }
 
 .logo::before,
@@ -63,9 +63,14 @@ header {
 }
 
 .logo::before {
-    left: 2px;
-    text-shadow: -2px 0 rgb(0, 0, 0);
-    animation-duration: 1s;
+    content: attr(data-text);
+    color: #b74b4b;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    visibility: hidden;
+    animation: 0.2s;
 }
 
 .logo::after {
@@ -485,12 +490,60 @@ span {
 .about{
     padding: 90px;
     font-size: medium;
-    background-color: #160909;
+
 }
-.contact{
-    padding: 100px;
-}
-.lineB{
+#contact {
+    width: 100%;
+    position: relative;
+    padding: 60px 20px;  /* Space inside the section */
     color: white;
-    background-color: white;
+    text-align: center;
+    overflow: hidden; /* Prevent content from overflowing */
+  }
+  
+  /* Curvy SVG Styling */
+  .curvy-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%vw;
+    height: 100%;
+    z-index: -1; /* Ensure the SVG stays behind content */
+  }
+  
+  /* Optional: Smooth transition for the SVG paths */
+  .path-0, .path-1 {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Optional: Adjust SVG background opacity or color */
+  #contact:hover .path-0 {
+    fill-opacity: 0.8; /* Change opacity on hover */
+  }
+  
+  #contact:hover .path-1 {
+    fill-opacity: 0.9; /* Change opacity on hover */
+  }
+  
+  /* Responsive for mobile devices */
+  @media (max-width: 768px) {
+    #contact {
+      padding: 40px 20px;  /* Adjust padding on smaller screens */
+    }
+  
+    .curvy-svg {
+      width: 100%vw;
+      height: 50%;  /* Adjust SVG size for smaller screens */
+    }
+}
+.contact h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.fa-solid fa-phone{
+    padding-left: 50px;
+    color: #000;
+    background-color: #000;
 }
