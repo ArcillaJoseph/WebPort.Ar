@@ -547,4 +547,75 @@ span {
     padding-left: 50px;
     color: #000;
     background-color: #000;
-}
+} 
+
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-logo h2 {
+    font-size: 2.5rem;
+    color: #b74b4b;
+    font-weight: bold;
+  }
+  
+  .footer-social-links a {
+    font-size: 2rem;
+    margin: 0 1rem;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-social-links a:hover {
+    color: #b74b4b;
+    transform: scale(1.2);
+  }
+  
+  .footer-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-navigation a {
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+  }
+  
+  .footer-navigation a:hover {
+    color: #b74b4b;
+    border-bottom: 2px solid #b74b4b;
+  }
+  
+  .footer-copyright p {
+    font-size: 1.4rem;
+    color: #ccc;
+    margin-top: 2rem;
+  }
+  
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #b74b4b, #000);
+  }
